@@ -1,0 +1,81 @@
+{
+  "movies": [
+    {
+      "title": "Italian Spiderman",
+      "year": "2007",
+      "id": "tt2705436",
+      "type": "movie",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZWQxMjcwNjItZjI0ZC00ZTc4LWIwMzItM2Q0YTZhNzI3NzdlXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_SX300.jpg"
+    },
+    {
+      "title": "Superman, Spiderman or Batman",
+      "year": "2011",
+      "id": "tt2084949",
+      "type": "movie",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjQ4MzcxNDU3N15BMl5BanBnXkFtZTgwOTE1MzMxNzE@._V1_SX300.jpg"
+    },
+    {
+      "title": "Spiderman",
+      "year": "1990",
+      "id": "tt0100669",
+      "type": "movie",
+      "poster": "N/A"
+    },
+    {
+      "title": "Spiderman",
+      "year": "2010",
+      "id": "tt1785572",
+      "type": "movie",
+      "poster": "N/A"
+    },
+    {
+      "title": "Spiderman in Cannes",
+      "year": "2016",
+      "id": "tt5978586",
+      "type": "movie",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZDlmMGQwYmItNTNmOS00OTNkLTkxNTYtNDM3ZWVlMWUyZDIzXkEyXkFqcGdeQXVyMTA5Mzk5Mw@@._V1_SX300.jpg"
+    },
+    {
+      "title": "Spiderman and Grandma",
+      "year": "2009",
+      "id": "tt1433184",
+      "type": "movie",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjE3Mzg0MjAxMl5BMl5BanBnXkFtZTcwNjIyODg5Mg@@._V1_SX300.jpg"
+    },
+    {
+      "title": "Fighting, Flying and Driving: The Stunts of Spiderman 3",
+      "year": "2007",
+      "id": "tt1132238",
+      "type": "movie",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNTI3NDE1ZmEtMTRiMS00YTY4LTk0OGItNjY4YmI0MDM4OGM4XkEyXkFqcGdeQXVyODE2NDgwMzM@._V1_SX300.jpg"
+    },
+    {
+      "title": "Spiderman the Verse",
+      "year": "2019–",
+      "id": "tt12122034",
+      "type": "series",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjA2NmZhOGEtZTQ5OS00MDI0LTg4N2UtYTRmOTllM2I2NDlhXkEyXkFqcGdeQXVyNTU4OTE5Nzc@._V1_SX300.jpg"
+    },
+    {
+      "title": "The Amazing Spiderman 2 Webb Cut",
+      "year": "2021",
+      "id": "tt18351128",
+      "type": "movie",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzYzZDViNWYtNWViMS00NDMxLThlN2YtZjFkOWMwODkzNzhiXkEyXkFqcGdeQXVyMTUwMzM4NzU0._V1_SX300.jpg"
+    },
+    {
+      "title": "Amazing Spiderman Syndrome",
+      "year": "2012",
+      "id": "tt2586634",
+      "type": "movie",
+      "poster": "N/A"
+    }
+  ],
+  "users": [
+    {
+      "name": "Luis Fernando García Morales",
+      "email": "fernando.gm15@outlook.com",
+      "password": "Pass.Pass"
+    }
+  ]
+}
