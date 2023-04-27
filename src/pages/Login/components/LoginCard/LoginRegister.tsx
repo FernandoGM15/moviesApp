@@ -6,68 +6,86 @@ import {
   DialogTitle,
   IconButton,
   TextField,
-  Typography,
 } from "@mui/material";
-
 import CloseIcon from "@mui/icons-material/Close";
+import { FormEvent } from "react";
+import { storeUser } from "../../../../services/user.service";
 
 export interface DialogPropsI {
-  open: boolean;
+  openDialog: boolean;
   onClose: () => void;
 }
 
 export const LoginRegister = (props: DialogPropsI) => {
-  const { open, onClose } = props;
+  const { openDialog, onClose } = props;
 
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const formElement = e.currentTarget as HTMLFormElement;
+      await storeUser(formElement);
+      alert("User registered");
+      onClose();
+    } catch (error) {
+      alert(error);
+    }
+  };
   return (
-    <Dialog open={open} onClose={() => onClose()}>
-      <DialogTitle>
-        <Typography variant="h5" textAlign="center">
+    <>
+      <Dialog open={openDialog} onClose={() => onClose()}>
+        <DialogTitle textAlign="center">
           New user
-        </Typography>
-        <IconButton
-          aria-label="close"
-          onClick={onClose}
-          sx={{
-            position: "absolute",
-            right: 8,
-            top: 8,
-          }}
-        >
-          <CloseIcon />
-        </IconButton>
-      </DialogTitle>
-      <DialogContent>
-        <form>
-          <TextField
-            variant="outlined"
-            label="Name"
-            size="small"
-            fullWidth
-            margin="normal"
-            required={true}
-          />
-          <TextField
-            variant="outlined"
-            label="Email"
-            size="small"
-            fullWidth
-            margin="normal"
-            required={true}
-          />
-          <TextField
-            variant="outlined"
-            label="Password"
-            size="small"
-            fullWidth
-            margin="normal"
-            required={true}
-          />
+          <IconButton
+            aria-label="close"
+            onClick={onClose}
+            sx={{
+              position: "absolute",
+              right: 8,
+              top: 8,
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+        </DialogTitle>
+
+        <form onSubmit={handleSubmit}>
+          <DialogContent>
+            <TextField
+              variant="outlined"
+              label="Name"
+              name="name"
+              size="small"
+              fullWidth
+              margin="normal"
+              required={true}
+            />
+            <TextField
+              variant="outlined"
+              label="Email"
+              size="small"
+              name="email"
+              fullWidth
+              margin="normal"
+              required={true}
+            />
+            <TextField
+              variant="outlined"
+              label="Password"
+              size="small"
+              name="password"
+              type="password"
+              fullWidth
+              margin="normal"
+              required={true}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button variant="contained" type="submit">
+              Register
+            </Button>
+          </DialogActions>
         </form>
-      </DialogContent>
-      <DialogActions>
-        <Button variant="contained">Register</Button>
-      </DialogActions>
-    </Dialog>
+      </Dialog>
+    </>
   );
 };

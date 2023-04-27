@@ -8,7 +8,6 @@ export interface UserI {
 
 type UserParamsI = Partial<Record<keyof UserI, string>>
 
-type UserStoreI = Omit<UserI, 'id'>
 
 
 /**
@@ -27,13 +26,14 @@ export const getUsers = async (params?: UserParamsI): Promise<UserI[]> => {
 /**
  * @description  Function to store a user in the API
  */
-export const storeUser = async (body: UserStoreI): Promise<UserI> => {
+export const storeUser = async (formElement: HTMLFormElement): Promise<UserI> => {
+    const form = new FormData(formElement)
     const req = await fetch(`${URL}/users`, {
-        body: JSON.stringify(body),
+        body: JSON.stringify(Object.fromEntries(form)),
+        method: "POST",
         headers: {
             'Content-Type': 'application/json'
-        },
-        method: "POST",
+        }
     })
     if (req.ok) {
         return req.json()

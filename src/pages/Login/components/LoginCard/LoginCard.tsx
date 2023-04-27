@@ -36,7 +36,7 @@ const LoginCard = () => {
         </CardActions>
       </Card>
 
-      <LoginRegister open={open} onClose={handleClose} />
+      <LoginRegister openDialog={open} onClose={handleClose} />
     </>
   );
 };
