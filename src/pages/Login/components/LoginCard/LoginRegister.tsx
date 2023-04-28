@@ -78,12 +78,15 @@ export const LoginRegister = (props: DialogPropsI) => {
               margin="normal"
               required={true}
             />
-          </DialogContent>
-          <DialogActions>
-            <Button variant="contained" type="submit">
+            <Button
+              variant="contained"
+              type="submit"
+              fullWidth
+              sx={{ marginTop: 1.5 }}
+            >
               Register
             </Button>
-          </DialogActions>
+          </DialogContent>
         </form>
       </Dialog>
     </>
