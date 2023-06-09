@@ -15,10 +15,8 @@ type UserParamsI = Partial<Record<keyof UserI, string>>;
 export const getUsers = async (params?: UserParamsI): Promise<UserI[]> => {
   const query = params ? new URLSearchParams(params).toString() : "";
   const req = await fetch(`${URL}/users?${query}`);
-  if (req.ok) {
-    return req.json();
-  }
-  throw new Error("Error fetching users");
+  if (!req.ok) throw new Error("Error fetching users");
+  return req.json();
 };
 
 /**
@@ -36,8 +34,6 @@ export const storeUser = async (
       "Content-Type": "application/json",
     },
   });
-  if (req.ok) {
-    return req.json();
-  }
-  throw new Error("Error storing user");
+  if (!req.ok) throw new Error("Error storing user");
+  return req.json();
 };
