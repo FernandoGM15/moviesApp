@@ -1,7 +1,6 @@
 import {
   Button,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogTitle,
   IconButton,
@@ -30,6 +29,7 @@ export const LoginRegister = (props: DialogPropsI) => {
       alert(error);
     }
   };
+  
   return (
     <>
       <Dialog open={openDialog} onClose={() => onClose()}>
