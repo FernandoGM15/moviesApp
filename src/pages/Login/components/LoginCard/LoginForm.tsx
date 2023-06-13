@@ -1,16 +1,19 @@
 import { Button, Grid, TextField } from "@mui/material";
-import { FormEvent } from "react";
+import { FormEvent, useContext } from "react";
 import { login } from "../../../../services/auth.service";
+import AppContext from "../../../../context/AppContext/AppContext";
 
 const LoginForm = () => {
+  const { setSessionStorage } = useContext(AppContext)
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const form = new FormData(e.currentTarget);
       const email = form.get("email") as string;
       const password = form.get("password") as string;
-      await login(email, password);
-      alert("Login Successful");
+      const user = await login(email, password);
+      setSessionStorage(user)
     } catch (error) {
       alert(error);
     }

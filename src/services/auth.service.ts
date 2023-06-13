@@ -4,13 +4,18 @@ import { UserI } from "./user.service";
 /**
  * @description Function to Login
  */
-export const login = async (email: string, password: string): Promise<void> => {
+export const login = async (
+  email: string,
+  password: string
+): Promise<UserI> => {
   const url = `${URL}/users?email=${email}&password=${password}`;
   const req = await fetch(url);
   const res: UserI[] = await req.json();
   if (!req.ok) throw new Error("Invalid Credentials");
   if (res.length === 0) throw new Error("User not found");
-  sessionStorage.setItem("user", JSON.stringify(res));
+  const [user] = res;
+  sessionStorage.setItem("user", JSON.stringify(user));
+  return user;
 };
 
 /**
