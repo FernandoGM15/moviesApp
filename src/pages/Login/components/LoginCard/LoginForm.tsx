@@ -2,9 +2,11 @@ import { Button, Grid, TextField } from "@mui/material";
 import { FormEvent, useContext } from "react";
 import { login } from "../../../../services/auth.service";
 import AppContext from "../../../../context/AppContext/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-  const { setSessionStorage } = useContext(AppContext)
+  const { setUser } = useContext(AppContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -13,7 +15,8 @@ const LoginForm = () => {
       const email = form.get("email") as string;
       const password = form.get("password") as string;
       const user = await login(email, password);
-      setSessionStorage(user)
+      setUser(user)
+      navigate("/home", { replace: true })
     } catch (error) {
       alert(error);
     }

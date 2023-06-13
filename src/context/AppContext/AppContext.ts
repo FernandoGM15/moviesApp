@@ -4,7 +4,7 @@ import { UserI } from "../../services/user.service";
 
 export interface AppContextI {
   state: AppStateI;
-  setSessionStorage: (user: UserI) => void;
+  setUser: (user: UserI) => void;
 }
 
 const AppContext = createContext<AppContextI>({} as AppContextI);

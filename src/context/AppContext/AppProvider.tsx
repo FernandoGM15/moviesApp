@@ -23,13 +23,14 @@ const AppProvider = ({ children }: AppProviderPropsI) => {
 
     const [state, dispatch] = useReducer(AppReducer, INITIAL_STATE);
 
-    const setSessionStorage = (user: UserI) => {
+    const setUser = (user: UserI) => {
         dispatch({ type: "SET_USER", payload: user })
     }
     return (
         <AppContext.Provider value={{
             state,
-            setSessionStorage
+            loading: true,
+            setUser
         }}>
             {children}
         </AppContext.Provider>
